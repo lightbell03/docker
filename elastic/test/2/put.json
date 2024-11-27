@@ -1,0 +1,8 @@
+// PUT my_index/_doc/1
+
+{
+  "title": "hello world",
+  "views": 1234,
+  "public": true,
+  "created": "2019-01-17T14:05:01.234Z"
+}

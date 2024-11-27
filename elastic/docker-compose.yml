@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  es:
+    build:
+      context: ./es
+      dockerfile: Dockerfile
+    ports:
+      - "9200:9200"
+    container_name: elastic
+    networks:
+      - elk
+
+  kibana:
+    build:
+      context: ./kibana
+      dockerfile: Dockerfile
+    ports:
+      - "5601:5601"
+    container_name: kibana
+    networks:
+      - elk
+    depends_on:
+      - es
+
+networks:
+  elk:
+    driver: bridge
