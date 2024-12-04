@@ -18,4 +18,4 @@ ENV KAFKA_HEAP_OPTS="-Xmx400m -Xms400m"
 
 RUN ./kafka/bin/zookeeper-server-start.sh -daemon config/zookeeper.properites
 
-CMD [ "./kafka/bin/kafka-server-start.sh", "config/server.properites" ]
+CMD [ "./kafka/bin/kafka-server-start.sh", "./kafka/config/server.properites" ]
