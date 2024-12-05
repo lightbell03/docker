@@ -16,6 +16,4 @@ RUN ln -s kafka_2.12-2.5.0 kafka
 COPY ./config/server.properties ./kafka/config/server.properites
 ENV KAFKA_HEAP_OPTS="-Xmx400m -Xms400m"
 
-RUN ./kafka/bin/zookeeper-server-start.sh -daemon config/zookeeper.properites
-
 CMD [ "./kafka/bin/kafka-server-start.sh", "./kafka/config/server.properites" ]
